@@ -13,10 +13,27 @@ public class Lane {
 	private boolean leftToRight;
 	private double density;
 
-	// TODO : Constructeur(s)
+	public Lane(Game game, int ord,boolean leftToRight) {
+		this.game = game;
+		this.ord = ord;
+		this.leftToRight = leftToRight;
+		this.density = (double) Math.random() * 2;
+		this.speed = (int) Math.random() * 2;
+	}
 
-	public void update() {
+	public void update(){
+		if (this.leftToRight){
+			for (int i=0; i<cars.size();i++){
 
+			}
+		}
+		else{
+			for (int i=0; i<cars.size();i++){
+
+			}
+		}
+
+		}
 		// TODO
 
 		// Toutes les voitures se d�placent d'une case au bout d'un nombre "tic
@@ -28,7 +45,6 @@ public class Lane {
 
 		// A chaque tic d'horloge, une voiture peut �tre ajout�e
 
-	}
 
 	// TODO : ajout de methodes
 
@@ -62,4 +78,34 @@ public class Lane {
 			return new Case(game.width, ord);
 	}
 
+		public boolean isSafe(Case c) {
+			if (c.ord == this.ord) {
+				if (cars.isEmpty())
+					return true;
+				else {
+					if (this.leftToRight) {
+						for (int i = 0; i < cars.size(); i++) {
+							Car atm = cars.get(i);
+							int abs = atm.getLeftPosition().absc;
+							int taille = atm.getLength();
+							if (abs >= c.absc && (abs + taille) <= c.absc) {
+								return false;
+							}
+						}
+					} else {
+						for (int i = 0; i < cars.size(); i++) {
+							Car atm = cars.get(i);
+							int abs = atm.getLeftPosition().absc;
+							int taille = atm.getLength();
+							if (abs <= c.absc && (abs - taille) >= c.absc) {
+								return false;
+							}
+						}
+					}
+					return true;
+				}
+
+			}
+			return true;
+		}
 }

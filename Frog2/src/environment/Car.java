@@ -21,17 +21,24 @@ public class Car {
 		this.length = (int) Math.random()*3;
 	}
 	public void avancer (){
-		if(leftToRight== true){
+		if(leftToRight == true){
 			this.leftPosition = new Case(this.leftPosition.absc+1, this.leftPosition.ord);
 		}
 		if(leftToRight== false){
 			this.leftPosition = new Case(this.leftPosition.absc-1, this.leftPosition.ord);
+		}
 	}
 
-	
-	
+	public Case getLeftPosition() {
+		return leftPosition;
+	}
+
+	public int getLength() {
+		return length;
+	}
+
 	/* Fourni : addToGraphics() permettant d'ajouter un element graphique correspondant a la voiture*/
-	private void addToGraphics() {
+	private void addToGraphics(){
 		for (int i = 0; i < length; i++) {
 			Color color = colorRtL;
 			if (this.leftToRight){
@@ -42,4 +49,4 @@ public class Car {
 		}
 	}
 
-}
+}}
