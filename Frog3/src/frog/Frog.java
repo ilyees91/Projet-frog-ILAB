@@ -11,7 +11,7 @@ public class Frog implements IFrog {
 	private Game game;
 
 	public Frog(Game jeu){
-		this.position= new Case(jeu.width/2, 0);
+		this.position= new Case(jeu.width/2, 1);
 		this.game=jeu;
 		this.direction=null;
 	}
@@ -32,10 +32,10 @@ public class Frog implements IFrog {
 			game.setScore(-1);
 		}
 		if (key == Direction.left && (position.absc - 1 >= 0)) {
-			this.position = new Case(position.absc - 1, 0);
+			this.position = new Case(position.absc - 1, 1);
 		}
 		if (key == Direction.right && (position.absc + 1 < this.game.width)) {
-			this.position = new Case(position.absc + 1, 0);
+			this.position = new Case(position.absc + 1, 1);
 		}
 	}
 
