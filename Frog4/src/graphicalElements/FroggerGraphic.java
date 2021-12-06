@@ -103,7 +103,7 @@ public class FroggerGraphic extends JPanel implements IFroggerGraphics, KeyListe
 		label.setSize(this.getSize());
 		JLabel labelTemps = new JLabel(String.valueOf(duree)+" secondes");
 		labelTemps.setFont(new Font("Verdana", 1, 20));
-		labelTemps.setForeground(Color.red);
+		labelTemps.setForeground(Color.blue);
 		labelTemps.setVerticalAlignment(SwingConstants.BOTTOM);
 		labelTemps.setSize(this.getSize());
 		frame.getContentPane().add(labelTemps);
