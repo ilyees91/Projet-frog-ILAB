@@ -37,7 +37,7 @@ public class Environment implements IEnvironment {
     }
 
     public void update() {
-        for (int i=1; i< ensLane.size()-1; i++){
+        for (int i=2; i< ensLane.size()-1; i++){
             ensLane.get(i).update();
         }
     }
